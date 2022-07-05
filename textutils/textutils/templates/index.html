@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text Utils</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body style="padding:70px 0px 70px 0px">
+
+
+<!--TOP NAV BAR START-->
+<nav class="navbar navbar-expand-lg py-3 fixed-top" style="background-color: dodgerblue; color:white;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">TEXTUTILS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="#">Contact Us</a>
+            </div>
+        </div>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<!--TOP NAV BAR ENDS-->
+
+<!--marquee starts-->
+<marquee behavior="" direction="left" class="bg-info py-3">This website can make changes to your text as per your need.
+    Your can play with your text as you want
+</marquee>
+<!--marquee ends-->
+
+<!--form starts-->
+<div class="container">
+    <form action="/analize" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter Your Text Here</label>
+            <textarea required="required" class="form-control" name="user_text" id="exampleFormControlTextarea1"
+                      rows="7"></textarea>
+        </div>
+
+        <div class="mb-3 my-4">
+            <label for="exampleInputEmail1" class="form-label">Other Text</label>
+            <input type="text" class="form-control" name="count" maxlength="1"
+                   placeholder="Enter a single character for character count in given text and select character count option"
+                   id="exampleInputEmail1"
+                   aria-describedby="emailHelp">
+        </div>
+
+        <p>Choss one option , multiple option will through an error....</p>
+        <div class="d-flex flex-wrap">
+
+
+            <div class="form-check form-switch m-2">
+                <input class="form-check-input" type="checkbox" name="punc" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations</label>
+            </div>
+
+            <div class="form-check form-switch m-2">
+                <input class="form-check-input" type="checkbox" name="new_line" id="flexSwitchCheckDefault1">
+                <label class="form-check-label" for="flexSwitchCheckDefault1">Remove New Lines</label>
+            </div>
+
+            <div class="form-check form-switch m-2">
+                <input class="form-check-input" type="checkbox" name="caps" id="flexSwitchCheckDefault2">
+                <label class="form-check-label" for="flexSwitchCheckDefault2">Capitalize text</label>
+            </div>
+
+            <div class="form-check form-switch m-2">
+                <input class="form-check-input" type="checkbox" name="char_count" id="flexSwitchCheckDefault3">
+                <label class="form-check-label" for="flexSwitchCheckDefault3">Character count</label>
+            </div>
+
+            <div class="form-check form-switch m-2">
+                <input class="form-check-input" type="checkbox" name="space" id="flexSwitchCheckDefault4">
+                <label class="form-check-label" for="flexSwitchCheckDefault4">Extra Space Remover</label>
+            </div>
+
+            <div class="form-check form-switch m-2">
+                <input class="form-check-input" type="checkbox" name="lower" id="flexSwitchCheckDefault5">
+                <label class="form-check-label" for="flexSwitchCheckDefault5">Lower Case</label>
+            </div>
+
+            <div class="form-check form-switch m-2">
+                <input class="form-check-input" type="checkbox" name="titel" id="flexSwitchCheckDefault4">
+                <label class="form-check-label" for="flexSwitchCheckDefault4">Titel Case</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-info">Analize Text</button>
+    </form>
+</div>
+<!--form ends-->
+
+<!--Extra content starts-->
+<div class="container my-4">
+<hr class="">
+    <div class="row  border border-info">
+
+        <h1>What We Covers...</h1>
+<hr>
+        <div class="1">
+            <p><strong>Removing The Punctuation : </strong>It removes the punctuation from the given text and returns a
+                plain text.</p>
+            <p><strong>Removing New Line : </strong>If your text contains new lines or indents .it will remove all and
+                gives a output text in s single line.</p>
+            <p><strong>Capitalize : </strong>It capitalize each letter of the your given text like: <strong>SAUD UR
+                REHMAN.</strong> </p>
+            <p><strong>Character counting : </strong> It returns the count of characters in your given text ... or if you
+                also give a sigle character it will returns the repitition number of that character.</p>
+            <p><strong>Extra Space Removing : </strong>It will remove all the extra spacing in your text.</p>
+            <p><strong>Lower Case : </strong>It will convert all the leeters in your given text into lower case.like:
+                <strong>saud ur rehman.</strong></p>
+            <p><strong>Titel Case : </strong>It converts the given text into Titel case like: <strong>Saud Ur
+                Rehman.</strong></p>
+
+        </div>
+    </div>
+</div>
+<!--Extra content ends-->
+
+<!--footer starts-->
+
+<div class="container-fluid" style="position: fixed;bottom: 0;width: 100%;">
+    <div class="row text-center py-2 bg-dark text-white"><strong>CopyRight 2022</strong></div>
+
+</div>
+
+<!--footer ends-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

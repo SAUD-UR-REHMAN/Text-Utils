@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text Utils</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body style="padding:53px 0px 70px 0px">
+
+<!--TOP NAV BAR START-->
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: dodgerblue; color:white;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">TEXTUTILS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="#">Contact Us</a>
+            </div>
+        </div>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<!--TOP NAV BAR ENDS-->
+
+<!--marquee starts-->
+<marquee behavior="" direction="left" class="bg-info py-3">This website can make changes to your text as per your need.
+    Your can play with your text as you want
+</marquee>
+<!--marquee ends-->
+
+
+<div class="container">
+    <h1>The Text Analizer:----> {{ work }}</h1>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Enter Your Text Here</label>
+        <textarea class="form-control" name="user_text" id="exampleFormControlTextarea1"
+                  rows="7">{{analized_text}}</textarea>
+    </div>
+
+    <button class="btn btn-info my-4"><a href="http://127.0.0.1:8000/" style="all:unset;"> Back to TextUtils </a>
+    </button>
+</div>
+
+
+
+
+<!--footer starts-->
+
+<div class="container-fluid" style="position: fixed;bottom: 0;width: 100%;">
+    <div class="row text-center py-2 bg-dark text-white"><strong>CopyRight 2022</strong></div>
+
+</div>
+
+<!--footer ends-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>
